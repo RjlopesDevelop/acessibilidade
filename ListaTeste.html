@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<style>
+    body{
+        margin-left: 30px;
+    }
+    ul {
+        list-style: none;
+        display: inline-flex;
+    }
+    li{
+        width: 100px;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+    }
+        h1{
+           color:darkcyan; 
+        }
+</style>
+
+<body>
+
+    <h1 tabindex="0" id="cabecario1">Acessibilidade Lista</h1>
+
+    <ul>
+        <li><strong>Café</strong> <div>Bebida energética</div></li>
+        <li><strong>Chá</strong> <div>Bebida relaxante</div> </li>
+        <li><strong>Leite  e  <br aria-hidden="true"> Chocolate </strong> <div>Bebida relaxante</div> </li>
+    </ul>
+<caption></caption>
+     <table >
+         <tbody>
+             <tr>
+                 <th>teste</th>
+             </tr>
+         </tbody>
+         <tbody>
+             <tr>
+                 <td>
+                    <input type="checkbox" name="1"  value="8">
+                 </td>
+             </tr>
+         </tbody>
+     </table>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p><input type="text" id="valorLitros" maxlength="11"></p>
+    
+    <script>
+    
+    $(document).ready(function(){
+    $("#valorLitros").mask("999.999");
+});
+    
+    </script>
+</body>
+</html>
