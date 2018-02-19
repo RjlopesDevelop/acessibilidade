@@ -1,0 +1,49 @@
+<table>
+
+    <head>
+        <title>Exemplo Acessibilidade</title>
+    </head>
+
+    <body>
+        <table style="border:1px solid; border-collapse: separate;border-spacing: 32px 19px;" summary="Demonstrativo do Patrimônio">
+            <caption>Demonstrativo do Patrimônio</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Tipos</th>
+                    <th scope="col">Valores (R$)</th>
+                    <th scope="col">Percentual</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>110.740,22</td>
+                    <td>100%</td>
+                </tr>
+            </tfoot>
+
+            <tbody>
+                <tr>
+                    <td>Recursos Financeiro</td>
+                    <td>56.879,63</td>
+                    <td>51,36%</td>
+                </tr>
+                <tr>
+                    <td>Bens Móveis</td>
+                    <td>25.691,23</td>
+                    <td>23,20%</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </body>
+
+</table>
+
+<p>
+    teste de tooltip
+    <span role="tooltip" aria-describedby="tip_Descripton"> aqui
+       <span id='tip_Descripton'> Seja meu amigo por favor </span>
+    </span>
+</p>
