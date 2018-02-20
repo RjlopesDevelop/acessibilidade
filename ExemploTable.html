@@ -12,6 +12,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
@@ -58,12 +59,23 @@
         </table>
 
         <p>
-            teste de tooltip
-            <span role="tooltip" aria-describedby="tip_Descripton"> aqui
-                <span id='tip_Descripton' style="font-size:20px"> &#9415; </span>
+            <label data-toggle="tooltip" data-placement="right" title="exibindo o tooltip....!">passe o mouse aqui!!!</label>
+            <!-- Aqui bloco de tooltip com acessibilidade
+                <span role="tooltip" aria-describedby="tip_Descripton"  class="tooltip" title="&#9415;">
+                <span id='tip_Descripton' style="font-size:20px">    &#9415;  </span>
+            
             </span>
+            -->
         </p>
 
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            console.log("passou aqui");
+        });
+    </script>
 </body>
+
 </html>
