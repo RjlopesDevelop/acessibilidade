@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+ <meta charset="utf-8">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+</head>
+
+<style>
+    .tooltipl {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltipl .tooltiptextl {
+        /*visibility: hidden;*/
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 1s;
+        font-family: sans-serif;
+    }
+
+    .tooltipl .tooltiptextl::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltipl:hover .tooltiptextl {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .password-format {
+        background: #ec7000;
+        color: #FFFFFF;
+        border: 0px;
+        font-size: 30px;
+        text-align: justify;
+        letter-spacing: 0.3em;
+        font-weight: bold;
+    }
+</style>
+<script>
+
+    function maskDate(obj) {
+        var v = obj.value;
+         if (v.match(/^\d{2}$/) !== null) {
+            obj.value = v + '/';
+             console.log('Mascara 1 ' + obj.value);
+         } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+            obj.value = v + '/';
+             console.log(' Mascara 2  ' + obj.value);
+        }
+
+      
+    }
+</script>
+
+<body>
+<div class="container">
+    <h2>Tooltip</h2>
+    <p>Move the mouse over the text below:</p>
+
+   
+    <fieldset>
+        <legend>Formulário de testes</legend>
+
+        <p>
+            <label for="data">Data</label>
+            <input type="text" name="date" id="data" placeholder="dd/mm/yyyy" onkeypress="maskDate(this);" maxlength="10">
+            <span class="tooltipl glyphicon glyphicon-alert">
+                    <span class="tooltiptextl">leia com atenção</span>
+            </span>
+         
+        </p>
+        <p>
+            <input type="password" name="teste" maxlength="6" class="password-format">
+        </p>
+    </fieldset>
+</div>
+</body>
+
+</html>
