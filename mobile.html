@@ -3,58 +3,82 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-  <title>modelo webview</title>
+  <title>acessibilidade</title>
 
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  </head>
   <style>
+    body {
+      margin: 0rem !important;
+    }
+
     .div-close {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       margin: 1rem;
     }
+    
+    input:active + label, input:focus + label{
+      transform: translateY(-14px) scale(0.8);
+      transform-origin: 0 0;
+    }
 
     .senha {
       -webkit-text-security: disc;
     }
 
-    .teste {
-      /* margin-bottom: 100px; */
-
+    #container {
+      background: #f3e5f5;
+      height: calc(100vh - 0px);
+      display: table;
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .btn-large{
+      width: 100%;
     }
   </style>
-</head>
 
 <body>
 
-  <div id="container" style="background:#EC7000; 
-        color: #FFFFFF;  
-       height: calc(100vh - 65px);
-        display:table;
-        width: 100%;box-sizing: border-box ">
-  
-    <div style="padding: 16px">
-      <div class="div-close">
+  <div id="container">
+    <h1>Cabeçário</h1>
+    <!-- <div class="div-close">
         <button type="button" id="">Fechar</button>
+      </div> -->
+    <!-- <div>
+          <i class="medium material-icons">dock</i>
+      </div> -->
+    <div class="row">
+      <div class="input-field col s12">
+        
+        <input id="telefone" type="text" pattern="[0-9]*" inputmode="tel" class="senha" maxlength="12">
+        <label for="telefone">Senha</label>
       </div>
-      <div>
-        <span>icone</span>
-      </div>
-      <div class="teste">
-        <h1>cabeçário principal da tela</h1>
-        <input type="text" pattern="[0-9]*" inputmode="tel" class="senha">
+      <div class="input-field col s12">
+          <input id="texto" type="text">
+          <label for="texto">Nome</label>
       </div>
     </div>
     <div style="display: table-footer-group;
-        width: 100%; box-sizing: border-box">
+    width: 100%; box-sizing: border-box">
       <div style="padding: 16px;">
-        <button style="width: 100%">continuar</button>
+        <button class="waves-effect waves-light btn-large">continuar</button>
       </div>
-        
     </div>
-  
+
   </div>
-  
-  </div>
+
+
 
 </body>
 
