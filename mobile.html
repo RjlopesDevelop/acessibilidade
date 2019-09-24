@@ -7,10 +7,13 @@
 
   <head>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+      integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
 
   </head>
   <style>
@@ -24,62 +27,70 @@
       align-items: center;
       margin: 1rem;
     }
-    
-    input:active + label, input:focus + label{
+
+    /* input:active+label,
+    input:focus+label {
       transform: translateY(-14px) scale(0.8);
       transform-origin: 0 0;
-    }
+    } */
 
     .senha {
       -webkit-text-security: disc;
     }
 
-    #container {
+    .container {
       background: #f3e5f5;
+      /* height: calc(100vh - 0px);
+      display: table;
+      width: 100%; */
+      
+      padding-left: 1rem;
+      padding-right: 1rem;
+      
+    }
+
+    .btn-large {
+      width: 100%;
+      border-radius: 5px;
+    background: #000000;
+    }
+    .allPage{
       height: calc(100vh - 0px);
       display: table;
       width: 100%;
       box-sizing: border-box;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    .btn-large{
-      width: 100%;
+      margin-block-end:0px;
     }
   </style>
 
 <body>
 
-  <div id="container">
-    <h1>Cabeçário</h1>
+  <div class="container">
+  
     <!-- <div class="div-close">
-        <button type="button" id="">Fechar</button>
-      </div> -->
+          <button type="button" id="">Fechar</button>
+        </div> -->
     <!-- <div>
-          <i class="medium material-icons">dock</i>
-      </div> -->
-    <div class="row">
-      <div class="input-field col s12">
-        
-        <input id="telefone" type="text" pattern="[0-9]*" inputmode="tel" class="senha" maxlength="12">
-        <label for="telefone">Senha</label>
+            <i class="medium material-icons">dock</i>
+        </div> -->
+    <form class="pure-form pure-form-stacked allPage">
+      <h1>Cabeçário</h1>
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Nome</label>
+          <input id="name" type="text" placeholder="nome">
+        </div>
+        <div class="pure-control-group">
+          <label for="telefone">Senha</label>
+          <input id="telefone" type="text" pattern="[0-9]*" inputmode="tel" class="senha" maxlength="12">
+        </div>
+      </fieldset>
+      <div style="display: table-footer-group;width: 100%; box-sizing: border-box">
+        <div class="pure-controls" style="padding-bottom: 1rem">
+          <button type="submit" class="pure-button pure-button-primary btn-large">continuar</button>
+        </div>
       </div>
-      <div class="input-field col s12">
-          <input id="texto" type="text">
-          <label for="texto">Nome</label>
-      </div>
-    </div>
-    <div style="display: table-footer-group;
-    width: 100%; box-sizing: border-box">
-      <div style="padding: 16px;">
-        <button class="waves-effect waves-light btn-large">continuar</button>
-      </div>
-    </div>
-
+    </form>
   </div>
-
-
-
 </body>
-
 </html>
